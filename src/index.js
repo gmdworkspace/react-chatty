@@ -1,5 +1,5 @@
-import HelloWorld from './components/HelloWorld';
+import ReactChatty from './components/ReactChatty';
 
 export {
-  HelloWorld
+  ReactChatty
 };
