@@ -1,0 +1,70 @@
+{
+  "name": "react-chatty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint './{src,test}/**/*.{js,jsx}'",
+    "lint:fix": "eslint --fix './{src,test}/**/*.{js,jsx}'",
+    "test:unit": "NODE_ENV=test nyc mocha --compilers js:babel-core/register --require babel-polyfill --require test/enzymeSetup.js --require test/jsdomSetup.js --require ignore-styles './test/**/*.spec.{js,jsx}'",
+    "test:report": "NODE_ENV=test nyc report --reporter=lcov mocha --compilers js:babel-core/register --require babel-polyfill --require test/enzymeSetup.js --require test/jsdomSetup.js --require ignore-styles './test/**/*.spec.{js,jsx}'",
+    "test": "npm-run-all lint test:unit build",
+    "build": "webpack --config webpack.dev.js",
+    "build:production": "webpack -p --config webpack.prod.js",
+    "start:dev": "NODE_ENV=dev webpack-dev-server --config webpack.dev.js --watch --color",
+    "component:create": "./generator/component/create.sh",
+    "component:delete": "./generator/component/delete.sh",
+    "setup": "chmod +x generator/setup/setup.sh && ./generator/setup/setup.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmdworkspace/react-chatty"
+  },
+  "keywords": [],
+  "author": "Dinesh G M",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "7.0.0",
+    "babel-plugin-webpack-alias": "^2.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.1.2",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-react": "^7.8.1",
+    "ignore-styles": "^5.0.1",
+    "jsdom": "^11.10.0",
+    "json": "^9.0.6",
+    "mini-css-extract-plugin": "^0.4.0",
+    "mocha": "^5.1.1",
+    "node-sass": "^4.9.0",
+    "npm-run-all": "^4.1.1",
+    "nyc": "^11.7.3",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.config.js",
+      "./test/*Setup.js"
+    ]
+  }
+}
