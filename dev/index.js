@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDom from 'react-dom';
-import HelloWorld from '../src/components/HelloWorld';
+import ReactChatty from '../src/components/ReactChatty';
 
-ReactDom.render(<HelloWorld showDescription={true}/>, document.getElementById('container'));
+ReactDom.render(<ReactChatty />, document.getElementById('container'));
