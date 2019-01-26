@@ -1,0 +1,17 @@
+.typing-area {
+  background-color: #F5F7F9;
+
+  textarea {
+    width: 14rem;
+    height: 1.5rem;
+    background-color: #F5F7F9;
+    border-bottom-left-radius: 0.9rem;
+    bottom: 0;
+    left: 0;
+    border: 0;
+    position: absolute;
+    padding: 1rem;
+    font-size: 1rem;
+    resize: none;
+  }
+}
