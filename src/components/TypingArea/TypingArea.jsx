@@ -1,12 +1,21 @@
 import React from 'react';
-import './TypingArea.style.scss';
+import PropTypes from 'prop-types';
 import SendButton from 'src/components/TypingArea/SendButton/SendButton';
 
-const TypingArea = () => <div className='typing-area'>
-  <textarea />
+import './TypingArea.style.scss';
+
+const TypingArea = ({placeHolder}) => <div className='typing-area'>
+  <textarea placeholder={placeHolder}/>
   <SendButton/>
 </div>;
 
-TypingArea.propTypes = {};
+TypingArea.propTypes = {
+	placeHolder: PropTypes.string
+};
+
+TypingArea.defaultProps = {
+	placeHolder: 'Ask your questions here'
+
+};
 
 export default TypingArea;
