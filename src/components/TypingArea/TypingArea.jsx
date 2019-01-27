@@ -10,11 +10,11 @@ const TypingArea = ({placeHolder}) => <div className='typing-area'>
 </div>;
 
 TypingArea.propTypes = {
-	placeHolder: PropTypes.string
+  placeHolder: PropTypes.string
 };
 
 TypingArea.defaultProps = {
-	placeHolder: 'Ask your questions here'
+  placeHolder: 'Ask your questions here'
 
 };
 
