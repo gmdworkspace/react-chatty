@@ -9,9 +9,9 @@
 }
 
 .left {
-  float: left;
+  align-self: flex-start;
 }
 
 .right {
-  float: right;
+  align-self: flex-end;
 }
